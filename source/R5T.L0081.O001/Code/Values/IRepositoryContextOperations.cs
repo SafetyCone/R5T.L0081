@@ -12,6 +12,13 @@ using R5T.T0235.T000;
 
 namespace R5T.L0081.O001
 {
+    /// <summary>
+    /// Repository operations based on:
+    /// <list type="bullet">
+    /// <item><see cref="IHasRepositoryName"/></item>
+    /// <item><see cref="IHasRepositoryOwnerName"/></item>
+    /// </list>
+    /// </summary>
     [ValuesMarker]
     public partial interface IRepositoryContextOperations : IValuesMarker
     {
@@ -25,6 +32,7 @@ namespace R5T.L0081.O001
                 {
                     RepositoryName = context.RepositoryName,
                     RepositoryOwnerName = context.RepositoryOwnerName,
+                    //GitHubClient // Do not set, rely on outer operations.
                 };
 
                 return Instances.ContextOperator.In_Context(
